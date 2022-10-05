@@ -1,0 +1,9 @@
+NeoVim Configuration
+====================
+
+* prerequisite
+  * neovim (version=latest), https://neovim.io/
+  * rg (telescope live_gpre), https://github.com/BurntSushi/ripgrep/
+  * node (version=16), https://nodejs.org/
+
+* install via `git clone --recurse-submodules git@github.com:l1teng/config.nvim.git`

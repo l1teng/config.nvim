@@ -1,0 +1,96 @@
+[submodule "zephyr"]
+	path = pack/fork/start/zephyr
+	url = git@github.com:glepnir/zephyr-nvim.git
+[submodule "bufferline"]
+	path = pack/fork/start/bufferline
+	url = git@github.com:akinsho/bufferline.nvim.git
+[submodule "bufexplorer"]
+	path = pack/fork/start/bufexplorer
+	url = git@github.com:vim-scripts/bufexplorer.zip.git
+[submodule "bufdelete"]
+	path = pack/fork/start/bufdelete
+	url = git@github.com:famiu/bufdelete.nvim.git
+[submodule "tree"]
+	path = pack/fork/start/tree
+	url = git@github.com:kyazdani42/nvim-tree.lua.git
+[submodule "treesitter"]
+	path = pack/fork/start/treesitter
+	url = git@github.com:nvim-treesitter/nvim-treesitter.git
+[submodule "comment"]
+	path = pack/fork/start/comment
+	url = git@github.com:numToStr/Comment.nvim.git
+[submodule "indent-blankline"]
+	path = pack/fork/start/indent-blankline
+	url = git@github.com:lukas-reineke/indent-blankline.nvim.git
+[submodule "telescope"]
+	path = pack/fork/start/telescope
+	url = git@github.com:nvim-telescope/telescope.nvim.git
+[submodule "plenary"]
+	path = pack/fork/start/plenary
+	url = git@github.com:nvim-lua/plenary.nvim.git
+[submodule "which-key"]
+	path = pack/fork/start/which-key
+	url = git@github.com:folke/which-key.nvim.git
+[submodule "tmux.nvim"]
+	path = pack/fork/start/tmux.nvim
+	url = git@github.com:aserowy/tmux.nvim.git
+[submodule "hop"]
+	path = pack/fork/start/hop
+	url = git@github.com:phaazon/hop.nvim.git
+[submodule "gitsigns"]
+	path = pack/fork/start/gitsigns
+	url = git@github.com:lewis6991/gitsigns.nvim.git
+[submodule "autopairs"]
+	path = pack/fork/start/autopairs
+	url = git@github.com:windwp/nvim-autopairs.git
+[submodule "mason"]
+	path = pack/fork/start/mason
+	url = git@github.com:williamboman/mason.nvim.git
+[submodule "mason-lspconfig"]
+	path = pack/fork/start/mason-lspconfig
+	url = git@github.com:williamboman/mason-lspconfig.nvim.git
+[submodule "lspconfig"]
+	path = pack/fork/start/lspconfig
+	url = git@github.com:neovim/nvim-lspconfig.git
+[submodule "null-ls"]
+	path = pack/fork/start/null-ls
+	url = git@github.com:jose-elias-alvarez/null-ls.nvim.git
+[submodule "mason-null-ls"]
+	path = pack/fork/start/mason-null-ls
+	url = git@github.com:jayp0521/mason-null-ls.nvim.git
+[submodule "fidget"]
+	path = pack/fork/start/fidget
+	url = git@github.com:j-hui/fidget.nvim.git
+[submodule "lsp-signature"]
+	path = pack/fork/start/lsp-signature
+	url = git@github.com:ray-x/lsp_signature.nvim.git
+[submodule "cmp"]
+	path = pack/fork/start/cmp
+	url = git@github.com:hrsh7th/nvim-cmp.git
+[submodule "lspkind"]
+	path = pack/fork/start/lspkind
+	url = git@github.com:onsails/lspkind.nvim.git
+[submodule "cmp-lsp"]
+	path = pack/fork/start/cmp-lsp
+	url = git@github.com:hrsh7th/cmp-nvim-lsp.git
+[submodule "cmp-buffer"]
+	path = pack/fork/start/cmp-buffer
+	url = git@github.com:hrsh7th/cmp-buffer.git
+[submodule "cmp-path"]
+	path = pack/fork/start/cmp-path
+	url = git@github.com:hrsh7th/cmp-path.git
+[submodule "cmp-cmdline"]
+	path = pack/fork/start/cmp-cmdline
+	url = git@github.com:hrsh7th/cmp-cmdline.git
+[submodule "cmp-vsnip"]
+	path = pack/fork/start/cmp-vsnip
+	url = git@github.com:hrsh7th/cmp-vsnip.git
+[submodule "vsnip"]
+	path = pack/fork/start/vsnip
+	url = git@github.com:hrsh7th/vim-vsnip.git
+[submodule "friendly-snippets"]
+	path = pack/fork/start/friendly-snippets
+	url = git@github.com:rafamadriz/friendly-snippets.git
+[submodule "pack/forks/start/goto-preview"]
+	path = pack/fork/start/goto-preview
+	url = git@github.com:rmagatti/goto-preview.git
