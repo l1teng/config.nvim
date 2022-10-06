@@ -36,7 +36,7 @@ require("plugin.mason")
 
 require "fidget".setup {}
 require("plugin.lsp-signature")
-require("plugin.goto-preview")
+require("lspsaga").init_lsp_saga()
 
 require("plugin.cmp")
 

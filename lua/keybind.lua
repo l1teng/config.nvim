@@ -90,23 +90,7 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>", opt)
 -- mason
 K.mason = function(client, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  vim.keymap.set('n', '<leader>gd', "<Cmd>lua vim.lsp.buf.definition()<CR>", bufopts)
-  vim.keymap.set('n', '<leader>gh', "<Cmd>lua vim.lsp.buf.hover()<CR>", bufopts)
-  -- vim.keymap.set('n', 'gh', "<Cmd>lua vim.lsp.buf.signature_help()<CR>", bufopts)
-  vim.keymap.set('n', '<space>ca', "<Cmd>lua vim.lsp.buf.code_action()<CR>", bufopts)
-  vim.keymap.set('n', '<leader>gi', "<Cmd>lua vim.lsp.buf.implementation()<CR>", bufopts)
-  -- vim.keymap.set('n', 'gl', "<Cmd>lua vim.lsp.buf.incoming_calls()<CR>", bufopts)
-  -- vim.keymap.set('n', 'gd', "<Cmd>lua vim.lsp.buf.type_definition()<CR>", bufopts)
-  vim.keymap.set('n', '<leader>gr', "<Cmd>lua vim.lsp.buf.references()<CR>", bufopts)
-  vim.keymap.set('n', '<leader>rn', "<Cmd>lua vim.lsp.buf.rename()<CR>", bufopts)
   vim.keymap.set('n', '<leader>fm', "<Cmd>lua vim.lsp.buf.formatting()<CR>", bufopts)
-  -- vim.keymap.set('n', 'gs', "<Cmd>lua vim.lsp.buf.document_symbol()<CR>", bufopts)
-  -- vim.keymap.set('n', 'gw', "<Cmd>lua vim.lsp.buf.workspace_symbol()<CR>", bufopts)
-  vim.keymap.set('n', 'gp', "<Cmd>lua vim.diagnostic.goto_prev()<CR>", bufopts)
-  vim.keymap.set('n', 'gn', "<Cmd>lua vim.diagnostic.goto_next()<CR>", bufopts)
-  vim.keymap.set('n', 'go', "<Cmd>lua vim.diagnostic.open_float()<CR>", bufopts)
-  -- vim.keymap.set('n', 'gs', "<Cmd>lua vim.diagnostic.show()<CR>", bufopts)
-
   -- vim.api.nvim_create_autocmd("BufWritePre", {
   --   pattern = {
   --     "*"
@@ -114,12 +98,18 @@ K.mason = function(client, bufnr)
   --   command = [[lua vim.lsp.buf.formatting_sync()]]
   -- })
 end
--- lsp.goto_preview
-map("n", "gd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", opt)
-map("n", "gd", "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", opt)
-map("n", "gi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", opt)
-map("n", "gc", "<cmd>lua require('goto-preview').close_all_win()<CR>", opt)
-map("n", "gr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>", opt)
+-- lspsaga
+map("n", "<leader>gh", "<cmd>Lspsaga lsp_finder<CR>", opt)
+map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
+map("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
+map("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opt)
+map("n", "gO", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+map("n", "go", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opt)
+map('n', 'gp', "<Cmd>Lspsaga diagnostic_jump_prev<CR>", opt)
+map('n', 'gn', "<Cmd>Lspsaga diagnostic_jump_next<CR>", opt)
+map("n","<leader>o", "<cmd>LSoutlineToggle<CR>", opt)
+map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opt)
+
 -- cmp
 K.cmp = function(cmp)
   return {

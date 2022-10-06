@@ -91,6 +91,6 @@
 [submodule "friendly-snippets"]
 	path = pack/fork/start/friendly-snippets
 	url = git@github.com:rafamadriz/friendly-snippets.git
-[submodule "pack/forks/start/goto-preview"]
-	path = pack/fork/start/goto-preview
-	url = git@github.com:rmagatti/goto-preview.git
+[submodule "pack/fork/start/lspsaga"]
+	path = pack/fork/start/lspsaga
+	url = git@github.com:glepnir/lspsaga.nvim.git
