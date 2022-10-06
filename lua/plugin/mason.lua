@@ -47,8 +47,8 @@ mason_nullls.setup_handlers({
   isort = function()
     nullls.register(nullls.builtins.formatting.isort)
   end,
-  pylint = function()
-    nullls.register(nullls.builtins.diagnostics.pylint)
-  end,
+  -- pylint = function()
+  --   nullls.register(nullls.builtins.diagnostics.pylint)
+  -- end,
 })
 nullls.setup()
