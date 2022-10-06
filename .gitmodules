@@ -94,3 +94,6 @@
 [submodule "pack/fork/start/lspsaga"]
 	path = pack/fork/start/lspsaga
 	url = git@github.com:glepnir/lspsaga.nvim.git
+[submodule "pack/fork/start/copilot"]
+	path = pack/fork/start/copilot
+	url = git@github.com:github/copilot.vim.git

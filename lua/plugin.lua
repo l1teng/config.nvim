@@ -39,6 +39,5 @@ require("plugin.lsp-signature")
 require("lspsaga").init_lsp_saga()
 
 require("plugin.cmp")
+-- load copilot silently
 
-
--- {"github/copilot.vim"}
