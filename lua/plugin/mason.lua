@@ -28,7 +28,8 @@ mason_lspconfig.setup_handlers({
 mason_nullls.setup({
   ensure_installed = {
     'stylua', 'jq',
-    "black", "isort", "pylint"
+    "black", "isort", "pylint", 
+    "clang_format", "prettier"
   }
 })
 mason_nullls.setup_handlers({
@@ -46,6 +47,12 @@ mason_nullls.setup_handlers({
   end,
   isort = function()
     nullls.register(nullls.builtins.formatting.isort)
+  end,
+  clang_format = function()
+    nullls.register(nullls.builtins.formatting.clang_format)
+  end,
+  prettier = function()
+    nullls.register(nullls.builtins.formatting.prettier)
   end,
   -- pylint = function()
   --   nullls.register(nullls.builtins.diagnostics.pylint)
