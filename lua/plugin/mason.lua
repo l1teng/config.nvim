@@ -5,26 +5,26 @@ local mason_nullls = require("mason-null-ls")
 
 mason.setup()
 local servers = {
-  sumneko_lua = require "lspconfig.server_configurations.sumneko_lua",
-  clangd = require "lspconfig.server_configurations.clangd",
-  cmake = require "lspconfig.server_configurations.cmake",
-  texlab = require "lspconfig.server_configurations.texlab",
-  pyright = require "lspconfig.server_configurations.pyright",
-  yamlls = require "lspconfig.server_configurations.yamlls",
-  zk = require "lspconfig.server_configurations.zk",
-  bashls = require "lspconfig.server_configurations.bashls",
-  html = require "lspconfig.server_configurations.html",
-  cssls = require "lspconfig.server_configurations.cssls",
-  jsonls = require "lspconfig.server_configurations.jsonls",
-  dockerls = require "lspconfig.server_configurations.dockerls",
-  jdtls = require "lspconfig.server_configurations.jdtls",
-  gopls = require "lspconfig.server_configurations.gopls",
-  taplo = require "lspconfig.server_configurations.taplo",
+  sumneko_lua = require("lspconfig.server_configurations.sumneko_lua"),
+  clangd = require("lspconfig.server_configurations.clangd"),
+  cmake = require("lspconfig.server_configurations.cmake"),
+  texlab = require("lspconfig.server_configurations.texlab"),
+  pyright = require("lspconfig.server_configurations.pyright"),
+  yamlls = require("lspconfig.server_configurations.yamlls"),
+  zk = require("lspconfig.server_configurations.zk"),
+  bashls = require("lspconfig.server_configurations.bashls"),
+  html = require("lspconfig.server_configurations.html"),
+  cssls = require("lspconfig.server_configurations.cssls"),
+  jsonls = require("lspconfig.server_configurations.jsonls"),
+  dockerls = require("lspconfig.server_configurations.dockerls"),
+  jdtls = require("lspconfig.server_configurations.jdtls"),
+  gopls = require("lspconfig.server_configurations.gopls"),
+  taplo = require("lspconfig.server_configurations.taplo"),
 }
 
 local _servers = function(t)
-  local keys={}
-  for key,_ in pairs(t) do
+  local keys = {}
+  for key, _ in pairs(t) do
     table.insert(keys, key)
   end
   return keys
@@ -41,10 +41,15 @@ mason_lspconfig.setup_handlers({
 
 mason_nullls.setup({
   ensure_installed = {
-    'stylua', 'jq',
-    "black", "isort", "pylint", 
-    "clang_format", "prettier"
-  }
+    "stylua",
+    "jq",
+    "autopep8",
+    "black",
+    "isort",
+    "pylint",
+    "clang_format",
+    "prettier",
+  },
 })
 mason_nullls.setup_handlers({
   function(source_name)
@@ -55,6 +60,9 @@ mason_nullls.setup_handlers({
   end,
   jq = function()
     nullls.register(nullls.builtins.formatting.jq)
+  end,
+  autopep8 = function()
+    nullls.register(nullls.builtins.formatting.autopep8)
   end,
   black = function()
     nullls.register(nullls.builtins.formatting.black)
