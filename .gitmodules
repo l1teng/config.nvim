@@ -97,3 +97,6 @@
 [submodule "pack/fork/start/copilot"]
 	path = pack/fork/start/copilot
 	url = git@github.com:github/copilot.vim.git
+[submodule "pack/fork/start/todo-comments"]
+	path = pack/fork/start/todo-comments
+	url = git@github.com:folke/todo-comments.nvim.git

@@ -14,6 +14,7 @@ require("plugin.treesitter")
 require("nvim-treesitter.install").update()
 -- comment
 require("plugin.comment")
+require("todo-comments").setup()
 -- indent-blankline
 require("plugin.indent-blankline")
 -- telescope, require {"nvim-lua/plenary.nvim"}
