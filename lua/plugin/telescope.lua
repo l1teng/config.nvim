@@ -1,4 +1,4 @@
-local status, tele = pcall(require, "telescope")
+local tele = require("telescope")
 
 local config = {
   defaults = {
@@ -6,7 +6,12 @@ local config = {
       i = {}
     }
   },
-  pickers = {},
+  pickers = {
+    find_files = {
+      follow = true, -- follow symlinks
+    }
+  },
+
   extensions = {}
 }
 
