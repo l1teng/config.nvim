@@ -21,8 +21,8 @@ map("n", "<leader><C-j>", ":resize -10<CR>", opt)
 -- tab
 map("n", "<C-t>c", ":tabclose<CR>", opt)
 map("n", "<C-t>n", ":tabnew<CR>", opt)
-map("n", "<C-t>l", ":tabnext<CR>", opt)
-map("n", "<C-t>h", ":tabprevious<CR>", opt)
+map("n", "<C-t>n", ":tabnext<CR>", opt)
+map("n", "<C-t>p", ":tabprevious<CR>", opt)
 -- yank past
 map("v", "<leader>y", "\"+y", opt)
 map("v", "<leader>p", "\"+p", opt)
