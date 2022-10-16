@@ -13,26 +13,22 @@ map("n", "<leader><CR>", ":noh<CR>", opt)
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
 -- adjust size of windows
-map("n", "<leader><C-l>", ":vertical resize +20<CR>", opt)
-map("n", "<leader><C-h>", ":vertical resize -20<CR>", opt)
-map("n", "<leader><C-=>", "<C-w>=", opt)
-map("n", "<leader><C-k>", ":resize +10<CR>", opt)
-map("n", "<leader><C-j>", ":resize -10<CR>", opt)
+map("n", "<C-w>>", ":vertical resize +20<CR>", opt)
+map("n", "<C-w><", ":vertical resize -20<CR>", opt)
+map("n", "<C-w>+", ":resize +10<CR>", opt)
+map("n", "<C-w>-", ":resize -10<CR>", opt)
 -- tab
 map("n", "<C-t>C", ":tabclose<CR>", opt)
 map("n", "<C-t>c", ":tabnew<CR>", opt)
 map("n", "<C-t>n", ":tabnext<CR>", opt)
 map("n", "<C-t>p", ":tabprevious<CR>", opt)
--- yank past
-map("v", "<leader>y", "\"+y", opt)
-map("v", "<leader>p", "\"+p", opt)
 -- window close
 map("", "<C-w>c", ":close<CR>", opt)
 
 -- bufdel
 map("n", "<C-w>d", ":Bdelete<CR>", opt)
 -- bufexplorer
-map("n", "<C-w>b", ":BufExplorer<CR>", opt)
+map("n", "<C-w>e", ":BufExplorer<CR>", opt)
 -- bufferline
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
@@ -91,12 +87,21 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>", opt)
 K.mason = function(client, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', '<leader>fm', "<Cmd>lua vim.lsp.buf.formatting()<CR>", bufopts)
-  -- vim.api.nvim_create_autocmd("BufWritePre", {
-  --   pattern = {
-  --     "*"
-  --   },
-  --   command = [[lua vim.lsp.buf.formatting_sync()]]
-  -- })
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+  vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+  vim.keymap.set('n', '<space>wl', function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  end, bufopts)
+  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+  -- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+  -- vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  -- vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 -- lspsaga
 map("n", "<leader>gh", "<cmd>Lspsaga lsp_finder<CR>", opt)
@@ -107,7 +112,7 @@ map("n", "gO", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
 map("n", "go", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opt)
 map('n', 'gp', "<Cmd>Lspsaga diagnostic_jump_prev<CR>", opt)
 map('n', 'gn', "<Cmd>Lspsaga diagnostic_jump_next<CR>", opt)
-map("n","<leader>o", "<cmd>LSoutlineToggle<CR>", opt)
+map("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opt)
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opt)
 
 -- cmp

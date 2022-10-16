@@ -31,8 +31,6 @@ require("plugin.gitsigns")
 require("nvim-autopairs").setup()
 
 -- mason
--- lsp require {"neovim/nvim-lspconfig", "williamboman/mason-lspconfig.nvim"}
--- lint & formatter require {"jose-elias-alvarez/null-ls.nvim", "jayp0521/mason-null-ls.nvim"}
 require("plugin.mason")
 
 require "fidget".setup {}
@@ -40,5 +38,4 @@ require("plugin.lsp-signature")
 require("lspsaga").init_lsp_saga()
 
 require("plugin.cmp")
--- load copilot silently
 
