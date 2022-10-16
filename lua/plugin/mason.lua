@@ -51,33 +51,16 @@ mason_nullls.setup({
     "prettier",
   },
 })
-mason_nullls.setup_handlers({
-  function(source_name)
-    -- all sources with no handler get passed here
-  end,
-  stylua = function()
-    nullls.register(nullls.builtins.formatting.stylua)
-  end,
-  jq = function()
-    nullls.register(nullls.builtins.formatting.jq)
-  end,
-  autopep8 = function()
-    nullls.register(nullls.builtins.formatting.autopep8)
-  end,
-  black = function()
-    nullls.register(nullls.builtins.formatting.black)
-  end,
-  isort = function()
-    nullls.register(nullls.builtins.formatting.isort)
-  end,
-  clang_format = function()
-    nullls.register(nullls.builtins.formatting.clang_format)
-  end,
-  prettier = function()
-    nullls.register(nullls.builtins.formatting.prettier)
-  end,
-  -- pylint = function()
-  --   nullls.register(nullls.builtins.diagnostics.pylint)
-  -- end,
-})
-nullls.setup()
+
+local nullls_config = {
+  sources = {
+    nullls.builtins.formatting.stylua,
+    nullls.builtins.formatting.jq,
+    nullls.builtins.formatting.autopep8,
+    nullls.builtins.formatting.black,
+    nullls.builtins.formatting.isort,
+    nullls.builtins.formatting.clang_format,
+    nullls.builtins.formatting.prettier,
+  },
+}
+nullls.setup(nullls_config)
