@@ -1,6 +1,3 @@
-[submodule "zephyr"]
-	path = pack/fork/start/zephyr
-	url = git@github.com:glepnir/zephyr-nvim.git
 [submodule "bufferline"]
 	path = pack/fork/start/bufferline
 	url = git@github.com:akinsho/bufferline.nvim.git
@@ -100,3 +97,15 @@
 [submodule "pack/fork/start/todo-comments"]
 	path = pack/fork/start/todo-comments
 	url = git@github.com:folke/todo-comments.nvim.git
+[submodule "pack/fork/start/vimtex"]
+	path = pack/fork/start/vimtex
+	url = git@github.com:lervag/vimtex.git
+[submodule "pack/fork/start/colortheme-material"]
+	path = pack/fork/start/colortheme-material
+	url = git@github.com:marko-cerovac/material.nvim.git
+[submodule "pack/fork/start/colortheme-lualine"]
+	path = pack/fork/start/colortheme-lualine
+	url = git@github.com:nvim-lualine/lualine.nvim.git
+[submodule "pack/fork/start/nvim-web-devicons"]
+	path = pack/fork/start/nvim-web-devicons
+	url = git@github.com:nvim-tree/nvim-web-devicons.git
