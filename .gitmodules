@@ -109,3 +109,15 @@
 [submodule "pack/fork/start/nvim-web-devicons"]
 	path = pack/fork/start/nvim-web-devicons
 	url = git@github.com:nvim-tree/nvim-web-devicons.git
+[submodule "pack/fork/start/nvim-dap"]
+	path = pack/fork/start/nvim-dap
+	url = git@github.com:mfussenegger/nvim-dap.git
+[submodule "pack/fork/start/nvim-dap-python"]
+	path = pack/fork/start/nvim-dap-python
+	url = git@github.com:mfussenegger/nvim-dap-python.git
+[submodule "pack/fork/start/nvim-dap-ui"]
+	path = pack/fork/start/nvim-dap-ui
+	url = git@github.com:rcarriga/nvim-dap-ui.git
+[submodule "pack/fork/start/nvim-dap-virtual-text"]
+	path = pack/fork/start/nvim-dap-virtual-text
+	url = git@github.com:theHamsta/nvim-dap-virtual-text.git

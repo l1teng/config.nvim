@@ -41,7 +41,7 @@ nvim_tree.setup({
   filters = {
     dotfiles = true,
     custom = { "node_modules", "__pycache__" },
-    exclude = { ".gitignore" },
+    exclude = { ".gitignore", ".vscode" },
   },
   actions = {
     open_file = {

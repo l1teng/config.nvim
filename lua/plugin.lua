@@ -41,3 +41,6 @@ require("lspsaga").init_lsp_saga()
 require("plugin.cmp")
 
 require("plugin.vimtex")
+
+require("plugin.dap")
+

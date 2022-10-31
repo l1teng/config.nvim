@@ -167,4 +167,31 @@ K.gitsigns = function(bufnr)
   _map_gsigns({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
 end
 
+-- dap
+map("n", "<leader>dbe",
+  ":lua require'dap'.close()<CR>"
+  .. ":lua require'dap'.terminate()<CR>"
+  .. ":lua require'dap.repl'.close()<CR>"
+  .. ":lua require'dapui'.close()<CR>", opt)
+  -- .. ":lua require('dap').clear_breakpoints()<CR>"
+  -- .. "<C-w>o<CR>", opt)
+map("n", "<leader>dbs", ":lua require'dap'.continue()<CR>", opt)
+map("n", "<leader>dn", ":lua require'dap'.continue()<CR>", opt)
+-- break point
+map("n", "<leader>dpa", ":lua require('dap').toggle_breakpoint()<CR>", opt)
+map("n", "<leader>dpc", ":lua require('dap').clear_breakpoints()<CR>", opt)
+--  stepOver, stepOut, stepInto
+map("n", "<leader>dso", ":lua require'dap'.step_over()<CR>", opt)
+map("n", "<leader>dsi", ":lua require'dap'.step_into()<CR>", opt)
+map("n", "<leader>dsO", ":lua require'dap'.step_out()<CR>", opt)
+-- map("n", "<F10>", ":lua require'dap'.step_over()<CR>", opt)
+-- map("n", "<F11>", ":lua require'dap'.step_into()<CR>", opt)
+-- map("n", "<F12> ", ":lua require'dap'.step_out()<CR>", opt)
+-- 弹窗
+-- require("dapui").eval(<expression>)
+map("n", "<leader>de", ":lua require'dapui'.eval()<CR>", opt)
+map("v", "<leader>de", ":lua require('dapui').eval()<CR>", opt)
+-- map("n", dapp.eval_expression, ":lua require'dapui'.eval()<CR>", opt)
+-- map("v", dapp.eval_expression_visual, ":lua require('dapui').eval()<CR>", opt)
+
 return K
