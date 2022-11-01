@@ -30,34 +30,14 @@ map("n", "<C-w>>", ":vertical resize +20<CR>", opt)
 map("n", "<C-w><", ":vertical resize -20<CR>", opt)
 map("n", "<C-w>+", ":resize +10<CR>", opt)
 map("n", "<C-w>-", ":resize -10<CR>", opt)
+--------------------------------------------------------------------------------
 -- tab
+--------------------------------------------------------------------------------
 map("n", "<C-t>C", ":tabclose<CR>", opt)
 map("n", "<C-t>c", ":tabnew<CR>", opt)
 map("n", "<C-t>n", ":tabnext<CR>", opt)
 map("n", "<C-t>p", ":tabprevious<CR>", opt)
--- window close
-map("", "<C-w>c", ":close<CR>", opt)
 
--- bufdel
-map("n", "<C-w>d", ":Bdelete<CR>", opt)
--- bufexplorer
-map("n", "<C-w>e", ":BufExplorer<CR>", opt)
--- bufferline
-map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
--- comment
-K.comment = {
-  toggler = {
-    line = "gcc",
-    block = "gbc",
-  },
-  opleader = {
-    line = "gc",
-    bock = "gb",
-  },
-}
--- hop
-map("n", "fw", ":HopWord<CR>", opt)
 -- nvim-tree
 map("n", "<leader>nn", ":NvimTreeToggle<CR>", opt)
 K.nvim_tree = {
@@ -90,11 +70,28 @@ K.nvim_tree = {
   { key = "m", action = "toggle_mark" },
   { key = "bmv", action = "bulk_move" },
 }
+
+-- comment
+K.comment = {
+  toggler = {
+    line = "gcc",
+    block = "gbc",
+  },
+  opleader = {
+    line = "gc",
+    bock = "gb",
+  },
+}
+
 -- telescope
 map("n", "<leader>ff", ":Telescope find_files<CR>", opt)
 map("n", "<leader>fg", ":Telescope live_grep<CR>", opt)
 map("n", "<leader>fb", ":Telescope buffers<CR>", opt)
 map("n", "<leader>fh", ":Telescope help_tags<CR>", opt)
+
+-- hop
+map("n", "fw", ":HopWord<CR>", opt)
+
 -- mason
 K.mason = function(client, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }

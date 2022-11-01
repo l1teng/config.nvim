@@ -1,9 +1,196 @@
 NeoVim Configuration
 ====================
 
-* prerequisite
-  * neovim (version=latest), https://neovim.io/
-  * rg (telescope live_gpre), https://github.com/BurntSushi/ripgrep/
-  * node (version=16), https://nodejs.org/
+================================================================================
+=                              *Table of Contents*                             =
+= - FILE STRUCTURE                                                             =
+= - INSTALLATION                                                               =
+= - GNERAL CONFIGURATION                                                       =
+= - VIM BUFFER / WINDOW / TAB MANAGEMENT                                       =
+= - FILE EXPLORER                                                              =
+= - SEARCHING                                                                  =
+= - COMMENTING                                                                 =
+= - PYTHON DEBUG GUIDE                                                         =
+================================================================================
 
-* install via `git clone --recurse-submodules git@github.com:l1teng/config.nvim.git ~/.config/nvim`
+
+================================================================================
+FILE STRUCTURE
+
+>
+.
+├── CONTRIBUTION
+├── LICENSE
+├── README
+├── VERSION
+├── init.lua # configuration entry
+├── lua # lua configuration
+│   ├── basic.lua # basic vim preferences
+│   ├── keybind.lua # keybinds settings
+│   ├── plugin # plugin settings
+│   └── plugin.lua # import plugins configuration
+└── pack
+    └── fork # forked neovim
+        └── start # plugins source code, managed using `git submodules`
+<
+
+
+================================================================================
+INSTALLATION
+
+Pre-requisites, install the following tools for better experience.
+
+- neovim (version=latest), https://neovim.io/
+- rg (telescope live_gpre), https://github.com/BurntSushi/ripgrep/
+- node (version=16), https://nodejs.org/
+
+Install via cloning the repo.
+
+>
+  git clone --recurse-submodules \
+      git@github.com:l1teng/config.nvim.git ~/.config/nvim`
+<
+
+
+================================================================================
+GNERAL
+
+- `:w` save file                                                     `<leader>w`
+- `:noh` clear search highlight                                   `<leader><CR>`
+- `:Telescope help_tags` search help tags                           `<leader>fh`
+- `:HopWord` fast-jump to specified word                            `<leader>fw`
+
+
+================================================================================
+VIM BUFFER / WINDOW / TAB MANAGEMENT
+
+*Plugins*.
+
+- git@github.com:akinsho/bufferline.nvim.git
+- git@github.com:vim-scripts/bufexplorer.zip.git
+- git@github.com:famiu/bufdelete.nvim.git
+
+*Buffer Management*. Each buffer is a memory location that stores the text of a
+file. A buffer is a file that is currently open in a window.
+
+- `:ls` list all buffers | `:BufExplorer` buffer explorers            `CTRL-w e`
+- `:Telescope buffers` list all buffers                             `<leader>fb`
+- `:bd` delete current buffer | `:Bdelete`                            `CTRL-w d`
+- `:bnext` switch to next buffer | `:BufferLineCycleNext`               `CTRL-l`
+- `:bprevious` switch to previous buffer | `:BufferLineCyclePrev`       `CTRL-h`
+
+*Window Management*. A window is a view of a buffer.
+
+- `:sp` split window horizontally                                     `CTRL-w s`
+- `:vsplit` split window vertically                                   `CTRL-w v`
+- `:close` close current window                                       `CTRL-w c`
+- `:vertical resize +20` resize window horizontally                   `CTRL-w >`
+- `:vertical resize -20` resize window horizontally                   `CTRL-w <`
+- `:resize +20` resize window vertically                              `CTRL-w +`
+- `:resize -20` resize window vertically                              `CTRL-w -`
+
+
+*Tab Management*. Each tab is a window layout with a set of buffers.
+
+- `:tabclose` - close current tab                                     `CTRL-t C`
+- `:tabnew` - open a new tab                                          `CTRL-t c`
+- `:tabnext` - go to next tab                                         `CTRL-t n`
+- `:tabprevious` - go to previous tab                                 `CTRL-t p`
+
+
+================================================================================
+FILE EXPLORER
+
+*Plugins*.
+
+- git@github.com:kyazdani42/nvim-tree.lua.git
+
+*Global Shortcuts*
+
+- `:NvimTreeToggle` toggle file explorer                             `CTRL-t t`
+
+*File Explorer Shortcuts*
+
+Check nvim-tree section in `kbindings.lua` for more shortcuts or input `g?` in 
+the file explorer.
+
+
+================================================================================
+SEARCHING
+
+*Plugins*.
+
+- git@github.com:nvim-telescope/telescope.nvim.git
+
+*Global Shortcuts*
+
+- `Telescope find_files` find files in current directory            `<leader>ff`
+- `:Telescope live_grep` search files for a string                  `<leader>fg`
+
+================================================================================
+COMMENTING
+
+*Plugins*.
+
+- git@github.com:numToStr/Comment.nvim.git
+
+*Global Shortcuts*.
+
+- `gcc` toggle comment on current line or selected lines (normal mode)
+- `gc` toggle comment on current line or selected lines (visual mode)
+
+
+================================================================================
+TODO: LANGUAGE SERVER PROTOCOL (LSP)
+
+
+================================================================================
+PYTHON DEBUG GUIDE
+
+*Local mode*, for the debug server program launched at the same machine as the 
+debug client program (NeoVim).
+
+Use `.vscode/launch.json`. The configuration is similar to `vscode`.
+
+>
+  {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Python: Current File (Integrated Terminal)",
+        "type": "python",
+        "request": "launch",
+        "program": "${file}",
+        "console": "integratedTerminal",
+        "cwd": "${workspaceFolder}",
+        "args": ["--debug"],
+        "env": {"PYTHONPATH": "${workspaceFolder}"}
+      }
+    ]
+  }
+<
+
+Launch the debugger via `:lua require'dap'.continue()<CR>`.
+
+*Remote mode*, for the debug server program launched at a remote machine, also 
+compatible with launching debug server program locally.
+
+Use `debugpy`. Launch the debug server program and the attach the client program
+(NeoVim) to the debug server program.
+
+Firstly, install `debugpy` in the debug server python envrionment.
+
+Secondly, launch the debug server program with `debugpy` in the debug server.
+
+>
+  $ /usr/bin/env python -m debugpy --wait-for-client --listen 0.0.0.0:5678 \
+                        <python-file-name> [<arg1> <arg2> ...]
+<
+
+Thirdly, attach the client program (NeoVim) to the debug server program, and 
+input the server address and port.
+
+>
+  :lua require'dap'.continue()<CR>
+<
+
