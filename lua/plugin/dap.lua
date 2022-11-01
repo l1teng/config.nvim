@@ -100,19 +100,19 @@ dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
 vim.fn.sign_define("DapBreakpoint", {
-  text = "🎃",
+  text = "BP",
   texthl = "LspDiagnosticsSignError",
   linehl = "",
   numhl = "",
 })
 vim.fn.sign_define("DapStopped", {
-  text = "👣",
+  text = "CR",
   texthl = "LspDiagnosticsSignInformation",
   linehl = "DiagnosticUnderlineInfo",
   numhl = "LspDiagnosticsSignInformation",
 })
 vim.fn.sign_define("DapBreakpointRejected", {
-  text = "🐛",
+  text = "RJ",
   texthl = "LspDiagnosticsSignHint",
   linehl = "",
   numhl = "",
