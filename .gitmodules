@@ -1,9 +1,6 @@
 [submodule "bufferline"]
 	path = pack/fork/start/bufferline
 	url = git@github.com:akinsho/bufferline.nvim.git
-[submodule "bufexplorer"]
-	path = pack/fork/start/bufexplorer
-	url = git@github.com:vim-scripts/bufexplorer.zip.git
 [submodule "bufdelete"]
 	path = pack/fork/start/bufdelete
 	url = git@github.com:famiu/bufdelete.nvim.git

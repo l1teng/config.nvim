@@ -12,7 +12,20 @@ map("n", "<leader>w", ":w<CR>", opt)
 map("n", "<leader><CR>", ":noh<CR>", opt)
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
--- adjust size of windows
+
+--------------------------------------------------------------------------------
+-- buffer
+--------------------------------------------------------------------------------
+-- bufdel
+map("n", "<C-w>d", ":Bdelete<CR>", opt)
+map("n", "<C-w>e", ":BufExplorer<CR>", opt)
+-- bufferline
+map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+--------------------------------------------------------------------------------
+-- window
+--------------------------------------------------------------------------------
+map("", "<C-w>c", ":close<CR>", opt)
 map("n", "<C-w>>", ":vertical resize +20<CR>", opt)
 map("n", "<C-w><", ":vertical resize -20<CR>", opt)
 map("n", "<C-w>+", ":resize +10<CR>", opt)

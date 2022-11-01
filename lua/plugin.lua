@@ -1,7 +1,5 @@
 require("plugin.theme")
 
--- bufexplorer
-vim.cmd("source " .. vim.fn.stdpath("config") .. "/pack/fork/start/bufexplorer/plugin/bufexplorer.vim")
 --bufferline
 require("plugin.bufferline")
 -- bdelete, loaded silently
