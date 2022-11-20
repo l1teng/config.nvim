@@ -118,3 +118,6 @@
 [submodule "pack/fork/start/nvim-dap-virtual-text"]
 	path = pack/fork/start/nvim-dap-virtual-text
 	url = git@github.com:theHamsta/nvim-dap-virtual-text.git
+[submodule "tmux_plugins/tmux-yank"]
+	path = tmux_plugins/tmux-yank
+	url = git@github.com:tmux-plugins/tmux-yank.git
